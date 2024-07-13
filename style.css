@@ -293,7 +293,7 @@ span {
 .testimonials-box img{
     width: 90%;
     border-radius: 5%;
-    border: 3px solid var(--main-color);
+    /* border: 3px solid var(--main-color); */
     box-shadow: 0 0 25px var(--main-color);
 }
 .wrapper{
