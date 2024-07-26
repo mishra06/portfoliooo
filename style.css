@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +9,17 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: -apple-system, sans-serif;
+    /* font-family: -apple-system, sans-serif; */
+    font-family: "Gloria Hallelujah", cursive;
 }
 
 :root {
     --bg-color: #fff;
-    --snd-bg-color: #d5fdf9;
+    /* --snd-bg-color: #d5fdf9; */
+    --snd-bg-color: #000000;
     --text-color: #000;
-    --main-color: #007F73;
+    /* --main-color: #007F73; */
+    --main-color: #040404;
 }
 
 html {
@@ -26,9 +32,34 @@ body {
     color: var(--text-color);
 }
 
+#more{
+    display: none;
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999999;  
+  }
+  
+  .circle {
+      position: absolute;
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 20px;
+      background-color: #fff;
+  }
+  
+
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 7rem 9% 2rem;
 }
 
 /* Header & NavBar Section */
@@ -70,7 +101,7 @@ section {
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--text-color);
+    color: var(--bg-color);
 }
 
 #menu-icon {
@@ -86,12 +117,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--main-color);
+    color: var(--bg-color);
 }
 
 .home-img img {
-    width: 20vw;
+    width: 18vw;
+    height: 45vh;
     animation: floatImage 4s ease-in-out infinite;
-    border-radius: 50%;
+    border-radius: 55%;
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
@@ -131,7 +165,8 @@ section {
 }
 
 span {
-    color: var(--main-color);
+    /* color: var(--main-color); */
+    color: var(--bg-color);
 }
 
 .home-content h1 {
@@ -161,7 +196,7 @@ span {
 
 .social-media a:hover {
     transform: scale(1.2)translateY(-10px);
-    background-color: var(--main-color);
+    background-color: var(--main-color);  
     color: var(--bg-color);
     box-shadow: 0 0 25px var(--main-color); 
 }
@@ -169,18 +204,18 @@ span {
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background: var(--main-color);
+    background: var(--bg-color);
     border-radius: 4rem;
     box-shadow: none;
     font-size: 1.6rem;
-    color: var(--bg-color);
+    color: var(--main-color);
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
 }
 
 .btn:hover {
-    box-shadow: 0 0 1.6rem var(--main-color);
+    box-shadow: 0 0 1.6rem var(--bg-color);
 }
 
 /* About Section */
@@ -191,6 +226,8 @@ span {
     justify-content: center;
     gap: 2rem;
     background: var(--snd-bg-color);
+    color: var(--bg-color);
+
 }
 
 .about-img img {
@@ -236,17 +273,82 @@ span {
 
 .services h2 {
     margin-bottom: 5rem;
+    color: var(--bg-color) !important;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--snd-bg-color);
+    /* background-color: rgb(241, 241, 248); */
+    /* height: auto; */
+    width: 100%;
+    /* border: 1px solid red; */
+    color: var(--bg-color);
+    
 }
 
 .services-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    /* background-color: rgb(241, 241, 248); */
+    width: 70%;
+    /* border: 1px solid red; */
 }
 
-.services-container .services-box {
+.service-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    /* border: 1px solid red; */
+    padding: 10px;
+}
+.service-boxs{
+    display: flex;
+    text-align: center;
+    height: 7vh;
+    width: auto;
+    border: 2px solid rgb(255, 250, 250);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    gap: 10px;
+    transition: .5s ease;
+    
+}
+
+.service-boxs:hover{
+    transform: scale(1.08);
+    background-color: #000;
+    color: #ffffff;
+    border-color: aqua;
+}
+.service-boxs .service_text{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.service-boxs .box-img{
+    height: 5vh;
+    width: 2.5vw;
+    /* border: 1px solid red; */
+}
+
+.service-boxs .box-img img{
+    height: 100%;
+    width: 100%;
+}
+
+/* .services-container .services-box {
     flex: 1 1 30rem;
     background: var(--snd-bg-color);
     padding: 6rem 2rem 6rem;
@@ -254,26 +356,13 @@ span {
     text-align: center;
     border: .3rem solid var(--bg-color);
     transition: .5s ease;
-}
+} */
 
-.services-container .services-box:hover {
+/* .services-container .services-box:hover {
     border-color: var(--main-color);
     transform: scale(1.02);
-}
+} */
 
-.services-box i {
-    font-size: 7rem;
-    color: var(--main-color);
-}
-
-.services-box h3 {
-    font-size: 2.6rem;
-}
-
-.services-box p {
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
-}
 
 /* ******************Testimonials Section********************* */
 
@@ -286,6 +375,10 @@ span {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.testimonials-box h2{
+    color: var(--bg-color);
 }
 .testimonials .heading{
     margin-bottom: 5rem;
@@ -322,8 +415,13 @@ span {
     border-color: var(--main-color);
     transform: scale(1.02);
 }
-.testimonial-item h2{
+.testimonial-item > h2{
     font-size: 3rem;
+    color: black;
+}
+.testimonial-item > h2 > span{
+    font-size: 3rem;
+    color: black;
 }
 .testimonial-item p{
     font-size: 1.8rem;
@@ -336,12 +434,12 @@ span {
 /* ******************Contact Section********************* */
 
 .contact {
-    background-color: var(--bg-color);
+    background-color: var(--main-color);
 }
 
 .contact h2 {
     margin-bottom: 3rem;
-    color: var(--main-color);
+    color: var(--bg-color);
 }
 
 .contact form {
@@ -387,15 +485,17 @@ span {
     width: 100%;
     padding: 40px 0;
     background-color: var(--snd-bg-color);
+    color: var(--bg-color);
 }
 .footer .social{
     text-align: center;
     padding-bottom: 25px;
-    color: var(--main-color);
+    /* color: var(--main-color); */
+    color: var(--bg-color);
 }
 .footer .social a{
     font-size: 25px;
-    color: var(--main-color);
+    /* color: var(--main-color); */
     border: 2px solid var(--main-color);
     width: 42px;
     height: 42px;
@@ -405,6 +505,7 @@ span {
     border-radius: 50%;
     margin: 0 10px;
     transition: 0.3s ease-in-out;
+    color: var(--bg-color);
 }
 .footer .social a:hover{
     transform: scale(1.2)translateY(-10px);
@@ -416,7 +517,8 @@ span {
     margin-top: 20px;
     text-align: center;
     font-size: 16px;
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    color: var(--bg-color);
 }
 
 /* BreakPoint */
@@ -488,16 +590,17 @@ span {
         order: 2;
         margin-left: 1rem;
     }
-    .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
+    .home-img img {
+        width: 35vw;
+        height: 35vh;
+        margin-top: 3rem;
     }
     .about{
         flex-direction: column-reverse;
     }
     .about-img img{
         width: 70vw;
-        margin-top: 4rem;
+        margin-top: 3rem;
     }
     .services h2{
         margin-bottom: 3rem;
