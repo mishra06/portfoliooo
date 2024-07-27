@@ -647,4 +647,26 @@ span {
     html{
         font-size: 50%;
     }
+    .services-container { 
+        width: 100%; 
+    }
+    .service-boxs .box-img{
+        width: 10vw;
+    }
+    .section{
+        padding: 0px;
+    }
+    .services {
+        padding: 2rem;
+    }
+    .about-content {
+        padding: 0 2rem;
+    }
+    .heading {
+        font-size: 5.5rem;
+    }
+    .home-content h1{
+        font-size: 30px;
+        font-weight: bolder;
+    }
 }
