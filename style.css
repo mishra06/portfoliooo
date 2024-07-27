@@ -653,6 +653,9 @@ span {
     .service-boxs .box-img{
         width: 10vw;
     }
+    .service-box{
+        padding: 18px;
+    }
     .section{
         padding: 0px;
     }
